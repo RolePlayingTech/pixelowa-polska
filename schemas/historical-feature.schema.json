@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pixelowa-polska/historical-feature.schema.json",
+  "title": "Historical Feature draft v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "kind",
+    "name",
+    "publication_state",
+    "states"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "kind": {
+      "enum": [
+        "building",
+        "road",
+        "railway",
+        "water",
+        "settlement",
+        "territory",
+        "landscape",
+        "other"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publication_state": {
+      "enum": [
+        "synthetic_test",
+        "draft",
+        "reviewed",
+        "published"
+      ]
+    },
+    "states": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/state"
+      }
+    }
+  },
+  "$defs": {
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state_id",
+        "valid_time",
+        "geometry",
+        "certainty",
+        "claims",
+        "source_ids",
+        "rights_review"
+      ],
+      "properties": {
+        "state_id": {
+          "type": "string"
+        },
+        "valid_time": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "from",
+            "to",
+            "precision"
+          ],
+          "properties": {
+            "from": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "to": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "precision": {
+              "enum": [
+                "day",
+                "year",
+                "decade",
+                "century",
+                "range",
+                "unknown"
+              ]
+            },
+            "date_label": {
+              "type": "string"
+            }
+          }
+        },
+        "geometry": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "GeoJSON geometry; structure additionally validated in GIS pipeline"
+        },
+        "certainty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "existence",
+            "position",
+            "shape",
+            "dating"
+          ],
+          "properties": {
+            "existence": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "position": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "shape": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "dating": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "height": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "facade": {
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            }
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rights_review": {
+          "enum": [
+            "pending",
+            "approved",
+            "blocked"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

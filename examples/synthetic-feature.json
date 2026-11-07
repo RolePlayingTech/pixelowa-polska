@@ -1,0 +1,38 @@
+{
+  "id": "synthetic-test-settlement-01",
+  "kind": "settlement",
+  "name": "FIKCYJNA OSADA TESTOWA",
+  "publication_state": "synthetic_test",
+  "states": [
+    {
+      "state_id": "synthetic-1900",
+      "valid_time": {
+        "from": "1900",
+        "to": "1950",
+        "precision": "year",
+        "date_label": "1900–1949 (fikcyjne)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21,
+          52
+        ]
+      },
+      "certainty": {
+        "existence": "C",
+        "position": "C",
+        "shape": "D",
+        "dating": "C"
+      },
+      "claims": [
+        "SYNTHETIC / NOT HISTORICAL DATA"
+      ],
+      "source_ids": [
+        "SYNTHETIC-ONLY"
+      ],
+      "rights_review": "blocked",
+      "notes": "Nigdy nie publikować jako historycznej rekonstrukcji."
+    }
+  ]
+}
