@@ -114,4 +114,8 @@ Nie budujemy pełnego Street View, tłumów i interaktywnych postaci, rekonstruk
 
 ## 10. Pierwsze zlecenie dla agenta
 
-Daj integratorowi **najpierw G0 + G1**, jednocześnie z kwerendą historyczno-prawną przygotowującą G2. Po raportach i ADR zaakceptować zwycięski renderer oraz dokładny poligon, a dopiero wtedy uruchomić większą implementację. Tak ograniczamy ryzyko, nie rezygnując z docelowej ambicji.
+W **jednej delegacji** poleć integratorowi wykonanie G0–G5 jako serię małych, weryfikowalnych PR. Agent zaczyna od G0 + G1, równolegle przygotowuje kwerendę historyczno-prawną G2; po pozytywnym wyniku bramki G1 może samodzielnie przejść do G2/G3, zgodnie z udokumentowanym ADR i niezależnym review. Nie powinien zatrzymywać się po samym napisaniu planu ani czekać na nowe prompty po każdym małym kroku. Ma dostarczyć działające MVP z demem i raportem, nie tylko dokumentację.
+
+**Automatyczne przejście przez bramkę** jest dozwolone tylko po spełnieniu sprawdzalnych kryteriów (testy, źródła, licencje, wyniki wydajności, demonstracja). Jeśli brak źródeł lub praw do konkretnego stanu, agent ma ograniczyć zakres i jawnie oznaczyć lukę, a nie sfabrykować treść. Musi zatrzymać się przed wydatkami, dostępem do nowych tajnych systemów, produkcyjnym wdrożeniem lub zewnętrzną publikacją wymagającą zgody właściciela. W razie zasadniczego nierozstrzygniętego konfliktu architektonicznego przedstawić decyzję z rekomendacją do zatwierdzenia.
+
+Najpierw mała scena, później ogólnopolski szkielet — to **jeden projekt**, a nie dwa niezależne produkty. Pełne historyczne 3D całej Polski pozostaje programem wieloletnim, nie warunkiem zamknięcia pierwszej delegacji.
