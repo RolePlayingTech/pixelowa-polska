@@ -34,6 +34,7 @@ Nie obiecujemy pełnej rekonstrukcji każdego budynku ani płynnej animacji niez
 | [docs/06-sources-and-licenses.md](docs/06-sources-and-licenses.md) | Rejestr źródeł i licencji |
 | [docs/07-rendering-spike.md](docs/07-rendering-spike.md) | Eksperymenty z silnikiem pixel art |
 | [docs/08-roadmap.md](docs/08-roadmap.md) | Etapy i bramki jakości |
+| [docs/14-execution-plan-and-pilot.md](docs/14-execution-plan-and-pilot.md) | Szczegółowy plan agenta, pierwszy wycinek i bramki G0–G5 |
 | [docs/09-quality.md](docs/09-quality.md) | Testy i kryteria akceptacji |
 | [docs/10-backlog.md](docs/10-backlog.md) | Issues gotowe do przeniesienia na GitHub |
 | [docs/11-open-decisions.md](docs/11-open-decisions.md) | Pytania i decyzje do podjęcia |
